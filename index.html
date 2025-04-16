@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Sports Channels</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 30px;
+      color: #f39c12;
+    }
+    .channel-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .channel {
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 250px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .channel:hover {
+      transform: scale(1.05);
+    }
+    .channel img {
+      width: 100%;
+      height: auto;
+      border-bottom: 2px solid #f39c12;
+    }
+    .channel-title {
+      background: #444;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #f39c12;
+    }
+    .video-container {
+      display: none;
+      margin-top: 10px;
+      text-align: center;
+    }
+    video {
+      width: 90%;
+      max-width: 700px;
+      height: auto;
+      border: 2px solid #444;
+      border-radius: 10px;
+    }
+    .show-video-btn {
+      padding: 10px 20px;
+      background: #f39c12;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .show-video-btn:hover {
+      background: #e67e22;
+    }
+  </style>
+</head>
+<body>
+  <h1>📺 Live Sports Channels</h1>
+  <div class="channel-container">
+
+    <div class="channel" onclick="showVideo('star-sport')">
+      <img src="https://via.placeholder.com/250x140?text=Star+Sports+1+HD" alt="Star Sports 1 HD">
+      <div class="channel-title">Star Sports 1 HD</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="star-sport">
+        <video controls autoplay>
+          <source src="https://www.tbn24.com/api/video/4028_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('t-sport-1')">
+      <img src="https://via.placeholder.com/250x140?text=T-Sports+HD+1" alt="T-Sports HD">
+      <div class="channel-title">T-Sports HD (Link 1)</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="t-sport-1">
+        <video controls>
+          <source src="https://www.tbn24.com/api/video/4031_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('t-sport-2')">
+      <img src="https://via.placeholder.com/250x140?text=T-Sports+HD+2" alt="T-Sports HD">
+      <div class="channel-title">T-Sports HD (Link 2)</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="t-sport-2">
+        <video controls>
+          <source src="https://www.tbn24.com/api/video/4036_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('sony-sport')">
+      <img src="https://via.placeholder.com/250x140?text=Sony+Sports+Ten+1" alt="Sony Sports Ten 1 HD">
+      <div class="channel-title">Sony Sports Ten 1 HD</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="sony-sport">
+        <video controls>
+          <source src="https://www.tbn24.com/api/video/4037_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('willow')">
+      <img src="https://via.placeholder.com/250x140?text=Willow+by+Cricbuzz" alt="Willow by Cricbuzz">
+      <div class="channel-title">Willow by Cricbuzz</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="willow">
+        <video controls>
+          <source src="https://www.tbn24.com/api/video/4026_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('gtv')">
+      <img src="https://via.placeholder.com/250x140?text=GTV+HD" alt="GTV HD">
+      <div class="channel-title">GTV HD</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="gtv">
+        <video controls>
+          <source src="https://www.tbn24.com/api/video/4027_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('tennis')">
+      <img src="https://via.placeholder.com/250x140?text=Tennis" alt="Tennis">
+      <div class="channel-title">Tennis</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="tennis">
+        <video controls>
+          <source src="https://www.tbn24.com/api/video/5010_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('espn')">
+      <img src="https://via.placeholder.com/250x140?text=ESPN+News" alt="ESPN News">
+      <div class="channel-title">ESPN News</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="espn">
+        <video controls>
+          <source src="https://www.tbn24.com/api/video/5011_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('wwe')">
+      <img src="https://via.placeholder.com/250x140?text=WWE" alt="WWE">
+      <div class="channel-title">WWE</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="wwe">
+        <video controls>
+          <source src="https://www.tbn24.com/api/video/6012_0.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+    <div class="channel" onclick="showVideo('animal-planet')">
+      <img src="https://via.placeholder.com/250x140?text=Animal+Planet" alt="Animal Planet">
+      <div class="channel-title">Animal Planet</div>
+      <button class="show-video-btn">Watch Now</button>
+      <div class="video-container" id="animal-planet">
+        <video controls>
+          <source src="http://212.102.60.231/Animal_Planet/index.m3u8" type="application/x-mpegURL">
+        </video>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showVideo(channelId) {
+      const videoContainers = document.querySelectorAll('.video-container');
+      videoContainers.forEach(container => {
+        container.style.display = 'none'; // Hide all videos
+      });
+      
+      const selectedVideo = document.getElementById(channelId);
+      selectedVideo.style.display = 'block'; // Show selected video
+    }
+  </script>
+
+</body>
+</html>
